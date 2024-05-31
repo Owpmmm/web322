@@ -1,3 +1,16 @@
+/********************************************************************************
+* WEB322 – Assignment 02
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+*
+* Name: Jiyoon Kim Student ID: 154653208 Date: 2024-05-31
+*
+* Published URL: https://web322-phpd.onrender.com/
+*
+********************************************************************************/
 const express = require("express");
 const legoData = require("./legoSets");
 
