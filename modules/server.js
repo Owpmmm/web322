@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-    res.send(`Assignment 2: [Jiyoon Kim] - [154653208]`);
+    res.send(`Assignment 2: Jiyoon Kim - 154653208`);
 });
 
 app.get("/lego/sets", (req, res) => {
@@ -32,10 +32,15 @@ app.get("/lego/sets/theme-demo", (req, res) => {
     }
 });
 
-legoData.initialize().then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
-}).catch(err => {
-    console.error("Error initializing lego data:", err);
-});
+async function startServer() {
+    try {
+        await legoData.initialize();
+        app.listen(PORT, () => {
+            console.log(`Server is running on http://localhost:${PORT}`);
+        });
+    } catch (err) {
+        console.error("Error initializing lego data:", err);
+    }
+}
+
+startServer();
